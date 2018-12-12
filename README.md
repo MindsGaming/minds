@@ -20,6 +20,73 @@ Minds is split into multiple repositories:
 
 ## Development Installation
 
+
+First we need to install a few things like docker. To do this on Mint or Ubuntu using the application store is the easiest way, just search docker and install the following packages;
+
+Docker
+
+Docker-compose
+
+Docker-containerd
+
+Docker-registry
+
+Docker.io
+
+Or follow (https://docs.docker.com/compose/)
+
+
+Now we can install git, to do this open the terminal {CTRL + ALT +T} and type;
+
+sudo apt-get install git
+
+Now we need to install Minds, do not use sudo here
+
+git clone https://github.com/Minds/minds.git
+
+Once this is done we need to open the file for Minds in the same terminal.
+
+cd minds
+
+Now we can follow Minds install instructions;
+
+Fist in order to install the front and engine repositories run;
+
+sh init.sh
+
+Next;
+
+sudo docker-compose up -d nginx
+
+Next;
+
+sudo docker-compose up installer
+
+sudo docker-compose up front-build
+
+Alright now we need to set-up our hosts, to do this we are going to run;
+
+sudoedit /etc/host
+
+We are going to paste and save the local host
+
+http://localhost:8080
+
+Once saved open the link in your browser.
+
+Troubleshooting
+
+Cassandra Doesn’t run;
+
+Try;
+
+sudo docker-compose up front-build
+
+Or run;
+
+sudo docker-compose up cassandra
+
+
 1. Run `sh init.sh` in order to install the front and engine repositories
 2. Run `docker-compose up -d nginx`
 3. Run `docker-compose up installer` (one time only.. initial username: minds / password: Pa$$w0rd)
