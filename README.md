@@ -23,11 +23,11 @@ Minds is split into multiple repositories:
 1. Clone the git `git clone https://github.com/Minds/minds.git`
 2. Go to folder`cd minds`
 3. Run `sh init.sh` in order to install the front and engine repositories
-4.Add the docker group `sudo groupadd docker` 
+4. Add the docker group `sudo groupadd docker` 
 5. Add the connected user "$USER" to the docker group.`sudo gpasswd -a $USER docker`
-6.Refresh docker:`newgrp docker` newgrp docker
+6. Refresh docker:`newgrp docker` newgrp docker
 7. Run `docker-compose up -d nginx`
-8. Run `docker-compose up installer` (one time only.. initial username: minds / password: Pa$$w0rd)
+8. Run `docker-compose up installer`
 9. Run `docker-compose up front-build`
 10. Add and save local host IP below to you host file  `sudoedit etc/host`
 11. Navigate to `http://localhost:8080`
